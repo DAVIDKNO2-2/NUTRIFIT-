@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExerciseDB App - Vanilla JS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- TODO: Considerar añadir un favicon -->
+</head>
+<body>
+    <div id="app-wrapper">
+        <!-- Header -->
+        <header id="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <!-- SVG para Dumbbell irá aquí (placeholder) -->
+                        <img src="assets/icons/dumbbell.svg" alt="Dumbbell Icon" class="icon" id="header-logo-icon">
+                        <h1>ExerciseDB</h1>
+                    </div>
+                    <div class="header-subtitle">
+                        <!-- SVG para Heart irá aquí (placeholder) -->
+                        <img src="assets/icons/heart.svg" alt="Heart Icon" class="icon" id="header-heart-icon">
+                        <span>Tu biblioteca de ejercicios</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <section id="search-filter-section">
+            <div class="container">
+                <h2>Encuentra el ejercicio perfecto para ti</h2>
+                <div class="controls-grid">
+                    <div class="search-input-container">
+                        <!-- SVG para Search irá aquí (placeholder) -->
+                        <img src="assets/icons/search.svg" alt="Search Icon" class="icon" id="search-icon">
+                        <input type="text" id="search-term" placeholder="Buscar ejercicios...">
+                    </div>
+                    <div class="category-select-container">
+                        <!-- SVG para Filter irá aquí (placeholder) -->
+                        <img src="assets/icons/filter.svg" alt="Filter Icon" class="icon" id="filter-icon">
+                        <select id="category-select">
+                            <option value="all">Todas las categorías</option>
+                            <!-- Categorías se cargarán aquí por JS -->
+                        </select>
+                    </div>
+                </div>
+                <p id="results-counter" class="results-counter">Mostrando 0 ejercicios</p>
+            </div>
+        </section>
+
+        <!-- Main Content: Exercise List -->
+        <main id="main-content">
+            <div class="container">
+                <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Cargando ejercicios...</span>
+                </div>
+                <div id="error-message" class="error-message" style="display: none;">
+                    <!-- Mensaje de error se mostrará aquí por JS -->
+                </div>
+                <div id="exercise-list" class="exercise-grid">
+                    <!-- Ejercicios se cargarán aquí por JS -->
+                    <!-- Ejemplo de tarjeta de ejercicio (estructura base para JS) -->
+                    <!--
+                    <div class="exercise-card">
+                        <div class="exercise-gif-container">
+                            <img src="assets/images/placeholder.svg" alt="Nombre del Ejercicio" class="exercise-gif">
+                        </div>
+                        <div class="exercise-info">
+                            <h3 class="exercise-name">Nombre del Ejercicio</h3>
+                            <p class="exercise-target">Músculo objetivo:<span></span></p>
+                            <div class="exercise-badges">
+                                <span class="badge body-part-badge">Parte del Cuerpo</span>
+                                <span class="badge equipment-badge">Equipamiento</span>
+                            </div>
+                            <div class="secondary-muscles" style="display:none;">
+                                <p class="secondary-muscles-title">Músculos secundarios:</p>
+                                <div class="secondary-muscles-list">
+                                    <span class="badge secondary-muscle-badge">Músculo</span>
+                                </div>
+                            </div>
+                            <button class="details-button">Ver detalles</button>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <div id="no-results-message" class="no-results" style="display: none;">
+                    <img src="assets/icons/dumbbell.svg" alt="Dumbbell Icon" class="icon-large" id="no-results-icon">
+                    <h3>No se encontraron ejercicios</h3>
+                    <p>Intenta con otros términos de búsqueda o cambia la categoría</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="main-footer">
+            <div class="container">
+                <p>
+                    <img src="assets/icons/dumbbell.svg" alt="Dumbbell Icon" class="icon" id="footer-dumbbell-icon">
+                    <span>Powered by ExerciseDB API</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
