@@ -16,9 +16,11 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 // --- RUTAS DE LA API ---
+// --- RUTAS DE LA API ---
 const API_BASE_URL = 'https://exercisedb.p.rapidapi.com';
-const RAPIDAPI_KEY = process.env.API_KEY;
+const RAPIDAPI_KEY = '1c0a5237b1msh39ee394c73853b8p1a2b6cjsnd5e0840b6583';
 const RAPIDAPI_HOST = 'exercisedb.p.rapidapi.com';
+
 
 if (!RAPIDAPI_KEY) {
     console.error("Error: La variable de entorno API_KEY no está definida.");
