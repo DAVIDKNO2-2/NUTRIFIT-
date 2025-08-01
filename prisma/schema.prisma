@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model AlimentacionPlan {
+  id          Int      @id @default(autoincrement())
+  nombre      String
+  descripcion String?
+  fechaInicio DateTime
+  fechaFin    DateTime
+  creadoEn    DateTime @default(now())
+  actualizadoEn DateTime @updatedAt
+  comidas     Comida[]
+}
+
+model Comida {
+  id            Int      @id @default(autoincrement())
+  tipo          String   // desayuno, almuerzo, cena, snack
+  hora          String?
+  descripcion   String
+  planId        Int
+  plan          AlimentacionPlan @relation(fields: [planId], references: [id])
+}
+
+model Routine {
+  id          Int        @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime   @default(now())
+  exercises   Exercise[]
+}
+
+model Exercise {
+  id           Int     @id @default(autoincrement())
+  name         String
+  repetitions  String?
+  instructions String?
+  routine      Routine @relation(fields: [routineId], references: [id])
+  routineId    Int
+}

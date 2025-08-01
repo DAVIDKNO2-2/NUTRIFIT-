@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>NutriFit - Planes de Alimentación</title>
+  <link rel="stylesheet" href="/alimentacion/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="app-title">NutriFit 🥗</h1>
+      <p class="tagline">Planes de alimentación personalizados para un estilo de vida saludable</p>
+    </header>
+
+    <section class="form-section">
+      <h2>Id Usuario</h2>
+      <input type="text" id="nombre" placeholder="Id" required />
+
+      <h2>Crear nuevo plan</h2>
+      <form id="formPlan">
+        <input type="text" id="nombre" placeholder="Nombre del plan" required />
+        <textarea id="descripcion" placeholder="Descripción"></textarea>
+        <h2>Fecha Inicio</h2>
+        <input type="date" id="fechaInicio" required />
+        <h2>Fecha Final</h2>
+        <input type="date" id="fechaFin" required />
+
+        <h3>Agregar comidas:</h3>
+        <div id="comidasContainer">
+          <div class="comida">
+            <select class="tipo">
+              <option value="desayuno">Desayuno</option>
+              <option value="almuerzo">Almuerzo</option>
+              <option value="cena">Cena</option>
+              <option value="snack">Snack</option>
+            </select>
+            <input type="time" class="hora" />
+            <input type="text" class="descripcion" placeholder="Descripción de la comida" required />
+          </div>
+        </div>
+
+        <button type="button" class="add-btn" onclick="agregarComida()">+ Comida</button>
+        <button type="submit" class="submit-btn">Crear plan</button>
+      </form>
+    </section>
+
+    <section class="planes-section">
+      <h2>Planes existentes</h2>
+      <ul id="listaPlanes"></ul>
+    </section>
+  </div>
+
+  <script src="/alimentacion/js/main.js"></script>
+</body>
+</html>
