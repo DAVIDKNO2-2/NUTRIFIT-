@@ -6,7 +6,7 @@ const path = require('path');
 const apiRoutes = require('./routes/api');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3890;
 
 // Configurar motor de vistas
 app.set('views', path.join(__dirname, 'views'));
